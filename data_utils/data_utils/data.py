@@ -160,10 +160,10 @@ class StudyLoader(pydantic.BaseModel):
     def iter_timelines(self) -> tp.Iterator[BaseData]:
 
         if self._timelines is None:
-            prin("hello from data/datloader/iter_timlines to say that no timelines were found in the data path passed from defaults.py")
+            print("hello from data/datloader/iter_timlines to say that no timelines were found in the data path passed from defaults.py")
             self._timelines = list(self.study().iter_timelines(self.path))
         else:
-            prin("hello from data/datloader/iter_timlines to say that i found ****timelines were found in the data path passed from defaults.py")
+            print("hello from data/datloader/iter_timlines to say that i found ****timelines were found in the data path passed from defaults.py")
             for tl in self._timelines:
                 TIMELINES[tl.timeline] = tl
 
