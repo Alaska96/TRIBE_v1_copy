@@ -31,6 +31,7 @@ def _check_folder_path(path: PathLike, name: str) -> Path:
     if not path.parent.exists():
         raise RuntimeError(f"Parent folder {path.parent} of {name} must exist first.")
     path.mkdir(exist_ok=True)
+    print(" after path.mkdir(exist_ok=True)****",path)
     print("path parent*******",path.parent)
     return path
 
@@ -54,9 +55,10 @@ class BaseData(pydantic.BaseModel):
         path = _check_folder_path(path, name="path")
         print("path from iter_timelines******",path)
         study = "Algonauts2025"
+        print("path.name.lower()***",path.name.lower())
+        print("study.lower()***",study.lower())
         if path.name.lower() != study.lower():
-            print("path.name.lower()***",path.name.lower())
-            print("study.lower()***",study.lower())
+            
             for name in (study, study.lower(), study.lower().replace("bold", ""),"algonauts_2025.competitors"):
                 if (path / name).exists():
                     path = path / name
