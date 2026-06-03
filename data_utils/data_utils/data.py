@@ -25,11 +25,13 @@ logger = logging.getLogger(__name__)
 
 
 def _check_folder_path(path: PathLike, name: str) -> Path:
-
+    print("name*******",name)
     path = Path(path)
+    print("path*******",path)
     if not path.parent.exists():
         raise RuntimeError(f"Parent folder {path.parent} of {name} must exist first.")
     path.mkdir(exist_ok=True)
+    print("path parent*******",path.parent)
     return path
 
 
@@ -50,10 +52,12 @@ class BaseData(pydantic.BaseModel):
     @classmethod
     def iter_timelines(cls, path: PathLike) -> tp.Iterator["BaseData"]:
         path = _check_folder_path(path, name="path")
+        print("path from iter_timelines******",path)
         study = "Algonauts2025"
         if path.name.lower() != study.lower():
-
-            for name in (study, study.lower(), study.lower().replace("bold", "")):
+            print("path.name.lower()***",path.name.lower())
+            print("study.lower()***",study.lower())
+            for name in (study, study.lower(), study.lower().replace("bold", ""),"algonauts_2025.competitors"):
                 if (path / name).exists():
                     path = path / name
                     logger.debug("Updating study path to %s", path)
