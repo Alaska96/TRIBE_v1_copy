@@ -78,7 +78,7 @@ class Benchmark(Callback):
         for subject in self.submission_dict.keys():
             samples_file = (
                 self.root_data_dir
-                / f"fmri/{subject}/target_sample_number/{subject}_friends-s7_fmri_samples.npy"
+                / f"algonauts_2025.competitors/fmri/{subject}/target_sample_number/{subject}_friends-s7_fmri_samples.npy"
             )
             target_sample_number = np.load(samples_file, allow_pickle=True).item()
             for chunk, sample_number in target_sample_number.items():
