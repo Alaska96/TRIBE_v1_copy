@@ -83,8 +83,6 @@ class Algonauts2025(BaseData):
     def _get_transcript_filepath(self):
         folder = (
             Path(self.path)
-            / "download"
-            / "algonauts_2025.competitors"
             / "stimuli"
             / "transcripts"
             / f"{self.task}"
@@ -106,8 +104,6 @@ class Algonauts2025(BaseData):
     def _get_movie_filepath(self) -> Path:
         folder = (
             Path(self.path)
-            / "download"
-            / "algonauts_2025.competitors"
             / "stimuli"
             / "movies"
             / f"{self.task}"
@@ -125,7 +121,7 @@ class Algonauts2025(BaseData):
         return stim_path
 
     def _get_fmri_filepath(self) -> Path:
-        folder = Path(self.path) / "download" / "algonauts_2025.competitors" / "fmri"
+        folder = Path(self.path) / "fmri"
         subj_dir = folder / self.subject / "func"
         file_stem = f"{self.subject}_task-{self.task}_space-MNI152NLin2009cAsym_atlas-Schaefer18_parcel-1000Par7Net"
         if self.task == "friends":
