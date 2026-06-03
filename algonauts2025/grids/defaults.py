@@ -11,7 +11,7 @@ PROJECT_NAME = "algonauts-2025"
 
 
 SLURM_PARTITION = "ulow"
-DATADIR = "/scratch_share/islab/Chaima/tribe_v1_work_space/Data/CMD_Data/algonauts_2025.competitors"
+DATADIR = "/scratch_share/islab/Chaima/tribe_v1_work_space/Data/CMD_Data"
 BASEDIR ="/scratch_share/islab/Chaima/tribe_v1_work_space"
 
 CACHEDIR = os.path.join(BASEDIR, "cache", PROJECT_NAME)
