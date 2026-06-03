@@ -10,9 +10,9 @@ from pathlib import Path
 PROJECT_NAME = "algonauts-2025"
 
 
-SLURM_PARTITION = "partition"
-DATADIR = "save_dir"
-BASEDIR = os.path.expandvars("save_dir")
+SLURM_PARTITION = "ulow"
+DATADIR = "/scratch_share/islab/Chaima/tribe_v1_work_space/Data/CMD_Data/algonauts_2025.competitors"
+BASEDIR ="/scratch_share/islab/Chaima/tribe_v1_work_space"
 
 CACHEDIR = os.path.join(BASEDIR, "cache", PROJECT_NAME)
 SAVEDIR = os.path.join(BASEDIR, "results", PROJECT_NAME)
