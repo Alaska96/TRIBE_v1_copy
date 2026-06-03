@@ -53,7 +53,7 @@ default_config = {
     "data": {
         "num_workers": 20,
         "study": {
-            "path": Path(DATADIR) / "algonauts2025",
+            "path": Path(DATADIR) / "algonauts_2025.competitors", #"path": Path(DATADIR) / "algonauts2025"
             "query": None,
             "infra": {
                 "folder": CACHEDIR,
