@@ -26,12 +26,12 @@ logger = logging.getLogger(__name__)
 
 def _check_folder_path(path: PathLike, name: str) -> Path:
     print("name*******",name)
-    path="/scratch_share/islab/Chaima/tribe_v1_work_space/Data/CMD_Data/algonauts_2025.competitors"
+    #path="/scratch_share/islab/Chaima/tribe_v1_work_space/Data/CMD_Data/algonauts_2025.competitors"
     path = Path(path)
     print("path*******",path)
     if not path.parent.exists():
         raise RuntimeError(f"Parent folder {path.parent} of {name} must exist first.")
-    #path.mkdir(exist_ok=True)
+    path.mkdir(exist_ok=True)
     print(" after path.mkdir(exist_ok=True)****",path)
     print("path parent*******",path.parent)
     return path
@@ -55,16 +55,16 @@ class BaseData(pydantic.BaseModel):
     def iter_timelines(cls, path: PathLike) -> tp.Iterator["BaseData"]:
         path = _check_folder_path(path, name="path")
         print("path from iter_timelines******",path)
-        study = "algonauts_2025.competitors"
+        study = "Algonauts2025"
         print("path.name.lower()***",path.name.lower())
         print("study.lower()***",study.lower())
-        #if path.name.lower() != study.lower():
+        if path.name.lower() != study.lower():
             
-            #for name in (study, study.lower(), study.lower().replace("bold", "")):
-                #if (path / name).exists():
-                    #path = path / name
-                    #logger.debug("Updating study path to %s", path)
-                    #break
+            for name in (study, study.lower(), study.lower().replace("bold", "")):
+                if (path / name).exists():
+                    path = path / name
+                    logger.debug("Updating study path to %s", path)
+                    break
         found = False
         for tl in cls._iter_timelines(path):
             found = True
