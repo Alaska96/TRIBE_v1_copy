@@ -304,7 +304,7 @@ class Experiment(pydantic.BaseModel):
         return pl_module
 
     def _setup_trainer(self, train_loader: DataLoader) -> pl.Trainer:
-        root_data_dir = Path(self.data.study.path)
+        root_data_dir = Path(self.data.study.path) / "algonauts_2025.competitors"
         # Initialize brain model
         batch = next(iter(train_loader))
         feature_dims = {}
