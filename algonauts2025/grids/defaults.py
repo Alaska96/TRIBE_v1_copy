@@ -13,8 +13,8 @@ PROJECT_NAME = "algonauts-2025"
 SLURM_PARTITION = "ulow"
 DATADIR = "/scratch_share/islab/Chaima/tribe_v1_work_space/Data/CMD_Data"
 BASEDIR ="/scratch_share/islab/Chaima/tribe_v1_work_space"
-
-CACHEDIR = os.path.join(BASEDIR, "cache_full", PROJECT_NAME)
+CACHROOT = "/scratch_share/islab/Chaima/tribe_v2_work_space"
+CACHEDIR = os.path.join(CACHROO, "cache_full", PROJECT_NAME)
 SAVEDIR = os.path.join(BASEDIR, "results", PROJECT_NAME)
 
 for path in [CACHEDIR, SAVEDIR, DATADIR]:
