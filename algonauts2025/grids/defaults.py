@@ -120,7 +120,7 @@ default_config = {
     "loss": {"name": "MSELoss"},
     "optim": {
         "optimizer": {
-            "name": "Adam",
+            "name": "AdamW",# Adam
             "lr": 1e-4,
             "kwargs": {
                 "weight_decay": 0.0,
@@ -136,7 +136,7 @@ default_config = {
     },
     "n_epochs": 15,
     "limit_train_batches": None,
-    "patience": None,
+    "patience": 3,# None
     "enable_progress_bar": True,
     "log_every_n_steps": 5,
     "fast_dev_run": False,
