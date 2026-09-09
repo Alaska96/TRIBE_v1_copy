@@ -14,7 +14,7 @@ SLURM_PARTITION = "ulow"
 DATADIR = "/scratch_share/islab/Chaima/tribe_v1_work_space/Data/CMD_Data"
 BASEDIR ="/scratch_share/islab/Chaima/tribe_v1_work_space"
 CACHROOT = "/scratch_share/islab/Chaima/tribe_v2_work_space"
-CACHEDIR = os.path.join(CACHROO, "cache_full/tribe_v2_baseline")
+CACHEDIR = os.path.join(CACHROOT, "cache_full/tribe_v2_baseline")
 SAVEDIR = os.path.join(BASEDIR, "results", PROJECT_NAME)
 
 for path in [CACHEDIR, SAVEDIR, DATADIR]:
@@ -87,6 +87,7 @@ default_config = {
         "layer_aggregation": "group_mean",
     },
     "wandb_config": {
+        "entity": "alaska0-university-of-milano-bicocca",
         "log_model": False,
         "project": "algonauts-2025",
         "group": "default",
