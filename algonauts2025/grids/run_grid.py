@@ -4,7 +4,7 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
-from data_utils.infra import ConfDict
+from data_utils.data_utils.infra import ConfDict
 from modeling_utils.utils import run_grid
 
 from ..main import Experiment  # type: ignore
