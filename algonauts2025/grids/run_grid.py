@@ -16,7 +16,7 @@ update = {
     "infra": {
         "cluster": "auto",
         "folder": SAVEDIR,
-        "slurm_partition": "partition",
+        "slurm_partition": "only-one-gpu",
         "job_name": PROJECT_NAME,
     },
     "wandb_config.group": GRID_NAME,
