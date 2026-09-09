@@ -20,17 +20,16 @@ update = {
         "job_name": PROJECT_NAME,
     },
     "wandb_config.group": GRID_NAME,
-    "save_checkpoints": False,
+    "save_checkpoints": True,
 }
 
 grid = {
     "data.layers": [
-        [0, 0.5, 1],
+
         [0.5, 0.75, 1.0],
-        [0.5, 1.],
-        [0, 0.2, 0.4, 0.6, 0.8, 1.0],
+      
     ],
-    "seed": list(range(5)),
+    
 }
 
 
