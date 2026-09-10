@@ -18,7 +18,9 @@ update = {
         "folder": SAVEDIR,
         "slurm_partition": "only-one-gpu",
         "job_name": PROJECT_NAME,
-        "mem_gb": 128
+        "mem_gb": 64,
+        "timeout_min": 48,
+        "cpus_per_task": 8,
     },
     "wandb_config.group": GRID_NAME,
     "save_checkpoints": True,
