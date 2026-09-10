@@ -250,10 +250,11 @@ class Experiment(pydantic.BaseModel):
             msg = "infra.folder needs to be specified to save the results."
             raise ValueError(msg)
         # Update Trainer parameters based on infra
-        self.infra.tasks_per_node = self.infra.gpus_per_node
+        #self.infra.tasks_per_node = self.infra.gpus_per_node
         #self.infra.slurm_use_srun = True if self.infra.gpus_per_node > 1 else False
         #if self.infra.gpus_per_node > 1:
         gpus = self.infra.gpus_per_node or 0
+        self.infra.tasks_per_node = gpus
         self.infra.slurm_use_srun = True if gpus > 1 else False
         if gpus > 1:
             self.metrics = [
@@ -417,7 +418,8 @@ class Experiment(pydantic.BaseModel):
         )
 
     def test(self, test_loader: DataLoader) -> None:
-        if self.infra.gpus_per_node > 1:
+       # if self.infra.gpus_per_node > 1:
+        if (self.infra.gpus_per_node or 0) > 1:
             LOGGER.info(
                 "Destroying DDP process group to enable testing on single device."
             )
