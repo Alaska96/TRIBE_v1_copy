@@ -11,7 +11,7 @@ import warnings
 
 import torch
 
-import data_utils as du
+import data_utils.data_utils as du
 
 from .base import Frequency
 
