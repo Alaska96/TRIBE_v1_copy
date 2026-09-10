@@ -10,7 +10,7 @@ from pathlib import Path
 PROJECT_NAME = "algonauts-2025"
 
 
-SLURM_PARTITION = "ulow"
+SLURM_PARTITION = "only-one-gpu"
 DATADIR = "/scratch_share/islab/Chaima/tribe_v1_work_space/Data/CMD_Data"
 BASEDIR ="/scratch_share/islab/Chaima/tribe_v1_work_space"
 CACHROOT = "/scratch_share/islab/Chaima/tribe_v2_work_space"
