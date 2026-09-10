@@ -251,8 +251,11 @@ class Experiment(pydantic.BaseModel):
             raise ValueError(msg)
         # Update Trainer parameters based on infra
         self.infra.tasks_per_node = self.infra.gpus_per_node
-        self.infra.slurm_use_srun = True if self.infra.gpus_per_node > 1 else False
-        if self.infra.gpus_per_node > 1:
+        #self.infra.slurm_use_srun = True if self.infra.gpus_per_node > 1 else False
+        #if self.infra.gpus_per_node > 1:
+        gpus = self.infra.gpus_per_node or 0
+        self.infra.slurm_use_srun = True if gpus > 1 else False
+        if gpus > 1:
             self.metrics = [
                 m for m in self.metrics if m.name not in ["TopkAcc"]
             ]  # FIXME: TopkAcc is not supported in DDP
