@@ -15,7 +15,7 @@ DATADIR = "/scratch_share/islab/Chaima/tribe_v1_work_space/Data/CMD_Data"
 BASEDIR ="/scratch_share/islab/Chaima/tribe_v1_work_space"
 CACHROOT = "/scratch_share/islab/Chaima/tribe_v2_work_space"
 CACHEDIR = os.path.join(CACHROOT, "cache_full/tribe_v2_baseline")
-SAVEDIR = os.path.join(BASEDIR, "results", PROJECT_NAME)
+SAVEDIR = os.path.join(BASEDIR, "new-results", PROJECT_NAME)
 
 for path in [CACHEDIR, SAVEDIR, DATADIR]:
     Path(path).mkdir(parents=True, exist_ok=True)
@@ -48,6 +48,7 @@ for feature in [
 default_config = {
     "infra": {
         "cluster": "slurm",  # Run example locally
+        "gpus_per_node": 1,
         "folder": SAVEDIR,
     },
     "data": {
