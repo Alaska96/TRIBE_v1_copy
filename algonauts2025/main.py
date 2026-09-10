@@ -254,7 +254,8 @@ class Experiment(pydantic.BaseModel):
         #self.infra.slurm_use_srun = True if self.infra.gpus_per_node > 1 else False
         #if self.infra.gpus_per_node > 1:
         gpus = self.infra.gpus_per_node or 0
-        self.infra.tasks_per_node = gpus
+        #self.infra.tasks_per_node = gpus
+        self.infra.tasks_per_node = max(1, gpus)
         self.infra.slurm_use_srun = True if gpus > 1 else False
         if gpus > 1:
             self.metrics = [
