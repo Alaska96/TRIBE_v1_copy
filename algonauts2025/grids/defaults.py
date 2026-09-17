@@ -125,7 +125,7 @@ default_config = {
             "name": "AdamW",# Adam
             "lr": 1e-4,
             "kwargs": {
-                "weight_decay": 0.0, #??????????????????
+                "weight_decay": 1e-2, # Changed
             },
         },
         "scheduler": {
