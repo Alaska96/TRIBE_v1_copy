@@ -7,7 +7,7 @@
 import os
 from pathlib import Path
 
-PROJECT_NAME = "algonauts-2025"
+PROJECT_NAME = "tribe_v1_baseline"
 
 
 SLURM_PARTITION = "only-one-gpu"
