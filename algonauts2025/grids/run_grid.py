@@ -10,11 +10,11 @@ from modeling_utils.utils import run_grid
 from ..main import Experiment  # type: ignore
 from .defaults import PROJECT_NAME, SAVEDIR, default_config
 
-GRID_NAME = "grid"
+GRID_NAME = "tribe_v1_baseline"
 
 update = {
     "infra": {
-        "cluster": "auto",
+        "cluster": "slurm",
         "folder": SAVEDIR,
         "slurm_partition": "only-one-gpu",
         "job_name": PROJECT_NAME,
