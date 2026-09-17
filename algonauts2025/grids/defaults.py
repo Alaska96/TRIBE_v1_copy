@@ -40,7 +40,7 @@ for feature in [
 ]:
     feature["infra"] = {
         "folder": CACHEDIR,
-        "keep_in_ram": True,
+        "keep_in_ram": False, # was default True
         "mode": "cached",
         "version": "final",
     }
@@ -99,7 +99,7 @@ default_config = {
         "modality_dropout": 0.3,
         "feature_aggregation": "cat",
         "layer_aggregation": "cat",
-        "subject_embedding": False,
+        "subject_embedding": True, # was False default
     },
     "metrics": [
         {
@@ -125,14 +125,14 @@ default_config = {
             "name": "AdamW",# Adam
             "lr": 1e-4,
             "kwargs": {
-                "weight_decay": 0.0,
+                "weight_decay": 0.0, #??????????????????
             },
         },
         "scheduler": {
             "name": "OneCycleLR",
             "kwargs": {
                 "max_lr": 1e-4,
-                "pct_start": 0.1,
+                "pct_start": 0.1, ##?????
             },
         },
     },
