@@ -19,7 +19,7 @@ update = {
         "slurm_partition": "only-one-gpu",
         "job_name": PROJECT_NAME,
         "mem_gb": 128,
-        "timeout_min": 1440,
+        "timeout_min": 2880,
         "cpus_per_task": 8,
     },
     "wandb_config.group": GRID_NAME,
