@@ -22,12 +22,15 @@ for path in [CACHEDIR, SAVEDIR, DATADIR]:
 
 text_feature = {
     "name": "LLAMA3p2",
+    "device": "cuda",
 }
 video_feature = {
     "name": "VJEPA2",
+    "device": "cuda",
 }
 audio_feature = {
     "name": "Wav2VecBert",
+    "device": "cuda",
 }
 neuro_feature = {
     "name": "Fmri",
