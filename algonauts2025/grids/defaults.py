@@ -48,6 +48,20 @@ for feature in [
         "version": "final",
     }
 
+# --- Parallelize video extraction across SLURM child jobs ---
+# VJEPA2 currently runs serially, one video file at a time (~54 min/file,
+# ~378 files remaining). text/audio are already fully cached, left untouched.
+video_feature["infra"].update({
+    "cluster": "slurm",
+    "gpus_per_node": 1,
+    "cpus_per_task": 8,
+    "mem_gb": 32,
+    "min_samples_per_job": 50,   # video files per child job
+    "max_jobs": 8,               # matches v2's proven value on this same account/partition
+    "slurm_partition": SLURM_PARTITION,
+    "timeout_min": 60 * 24 * 2,  # 2 days per child job
+})
+
 default_config = {
     "infra": {
         "cluster": "slurm",  # Run example locally
